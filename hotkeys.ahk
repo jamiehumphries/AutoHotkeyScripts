@@ -31,8 +31,17 @@ Return
 ^+F5::
 WinGetActiveTitle activeWindow
 WinActivate gitk
-WinWaitActive gitk,, 0
+WinWaitActive gitk,,0
 Send ^{F5}
+WinActivate %activeWindow%
+Return
+
+; Refresh git gui
+^!+F5::
+WinGetActiveTitle activeWindow
+WinActivate Git Gui
+WinWaitActive Git Gui,,0
+Send {F5}
 WinActivate %activeWindow%
 Return
 
