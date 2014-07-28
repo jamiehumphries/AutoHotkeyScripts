@@ -17,7 +17,7 @@ Return
 
 ; Open Cygwin
 #z::
-IfWinExist jah@FOXHOUND
+IfWinExist Cygwin
 {
   WinActivate
 }
