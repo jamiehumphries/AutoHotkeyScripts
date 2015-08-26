@@ -32,7 +32,7 @@ Return
 WinGetActiveTitle activeWindow
 WinActivate gitk
 WinWaitActive gitk,,0
-Send ^{F5}
+Send +{F5}
 WinActivate %activeWindow%
 Return
 
