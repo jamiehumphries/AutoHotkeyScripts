@@ -53,20 +53,4 @@ IfWinActive Outlook
 {
   Send !hh
 }
-Else
-{
-  Send !x
-}
-Return
-
-; Flag
-!z::
-IfWinActive Outlook
-{
-  Send !hut
-}
-Else
-{
-  Send !z
-}
 Return
