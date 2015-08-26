@@ -3,6 +3,7 @@ SetTitleMatchMode, 2
 ; == HOTSTRINGS ==
 
 :*?:,.::=>
+:*?:;'::->
 
 ; == GENERAL ==
 
