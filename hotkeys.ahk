@@ -55,3 +55,11 @@ IfWinActive Outlook
   Send !hh
 }
 Return
+
+; Set colour to red
+!a::
+IfWinActive Outlook
+{
+  Send !efc{Up}{Up}{Right}{Right}{Enter}
+}
+Return
