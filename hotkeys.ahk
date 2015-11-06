@@ -9,7 +9,7 @@ SetTitleMatchMode, 2
 
 ; Open Snipping Tool
 #x::
-Run C:\Windows\Sysnative\SnippingTool.exe
+Run SnippingTool
 Sleep 500
 Send ^{PrintScreen}
 Return
