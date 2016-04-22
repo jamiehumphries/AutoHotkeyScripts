@@ -14,6 +14,10 @@ Sleep 500
 Send ^{PrintScreen}
 Return
 
+; == MEDIA ==
+^F10::Send {Media_Prev}
+^F11::Send {Media_Next}
+^F12::Send {Media_Play_Pause}
 
 ; == GIT ==
 
