@@ -1,15 +1,19 @@
-SetTitleMatchMode, 2
+﻿SetTitleMatchMode, 2
 
 ; == HOTSTRINGS ==
 
 :*?:,.::=>
 :*?:;'::->
+:*?::@::{U+2192} ; →
+:*?:e''::{U+00e9} ; é
+
+^!.::Send {U+2026} ; …
 
 ; == GENERAL ==
 
 ; Open Snipping Tool
 #x::
-Run C:\Windows\Sysnative\SnippingTool.exe
+Run SnippingTool
 Sleep 500
 Send ^{PrintScreen}
 Return
@@ -40,14 +44,6 @@ WinActivate %activeWindow%
 Return
 
 ; == OUTLOOK ==
-
-; File
-!x::
-IfWinActive Outlook
-{
-  Send !hh
-}
-Return
 
 ; Set colour to red
 !a::
