@@ -6,8 +6,19 @@
 :*?:;'::->
 :*?::@::{U+2192} ; →
 :*?:e''::{U+00e9} ; é
+^!8::Send {U+2605} ; ★
+^!NumpadMult::Send {U+2605} ; ★
 
 ^!.::Send {U+2026} ; …
+^+9::Send ☹ ;
+^+0::Send ☺ ;
+^!0::Send {U+00B0} ; °
+^!'::Send ’ ;
+^!y::Send ✓ ;
+^!n::Send ✗ ;
+^!Numpad2::Send {U+00BD} ; ½
+^!Numpad3::Send {U+00BE} ; ¾
+^!Numpad4::Send {U+00BC} ; ¼
 
 ; == GENERAL ==
 
@@ -16,6 +27,16 @@
 Run SnippingTool
 Sleep 500
 Send ^{PrintScreen}
+Return
+
+; Refresh browser
+
+^!+r::
+WinGetActiveTitle activeWindow
+WinActivate Chrome
+WinWaitActive Chrome,,0
+Send ^r
+WinActivate %activeWindow%
 Return
 
 ; == MEDIA ==
@@ -45,10 +66,10 @@ Return
 
 ; == OUTLOOK ==
 
-; Set colour to red
-!a::
+; SimplyFile undo
+^!+z::
 IfWinActive Outlook
 {
-  Send !efc{Up}{Up}{Right}{Right}{Enter}
+  Send !hy5
 }
 Return
