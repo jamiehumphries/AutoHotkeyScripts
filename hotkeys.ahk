@@ -9,6 +9,10 @@
 ^!8::Send {U+2605} ; ★
 ^!NumpadMult::Send {U+2605} ; ★
 
+:*?:ppp::p{!}catch{Space}
+:*?:rrr::p{!}release{Space}
+:*?:ccc::p{!}confirm
+
 ^!.::Send {U+2026} ; …
 ^+9::Send ☹ ;
 ^+0::Send ☺ ;
