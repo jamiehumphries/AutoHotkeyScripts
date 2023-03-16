@@ -82,7 +82,6 @@ RefreshInactiveWindow(TargetWindowTitle, RefreshKeys)
 {
   RefreshInactiveWindow("gitk", "+{F5}")
 }
-
 ^!+F5::
 {
   RefreshInactiveWindow("Git Gui", "{F5}")
