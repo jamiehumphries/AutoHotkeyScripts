@@ -36,6 +36,7 @@ RefreshInactiveWindow(TargetWindowTitle, RefreshKeys)
     return
   ActiveWindowID := WinGetID("A")
   WinActivate(TargetWindowID)
+  WinWaitActive(TargetWindowTitle)
   Send(RefreshKeys)
   WinActivate(ActiveWindowID)
 }
