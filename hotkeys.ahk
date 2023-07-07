@@ -41,5 +41,17 @@ RefreshInactiveWindow(TargetWindowTitle, RefreshKeys)
   WinActivate(ActiveWindowID)
 }
 
-^+F5::RefreshInactiveWindow("gitk", "+{F5}")
-^!+F5::RefreshInactiveWindow("Git Gui", "{F5}")
+^+F5::
+{
+  KeyWait("Ctrl")
+  KeyWait("Shift")
+  RefreshInactiveWindow("gitk", "+{F5}")
+}
+
+^!+F5::
+{
+  KeyWait("Ctrl")
+  KeyWait("Alt")
+  KeyWait("Shift")
+  RefreshInactiveWindow("Git Gui", "{F5}")
+}
