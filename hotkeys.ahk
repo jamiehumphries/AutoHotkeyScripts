@@ -55,3 +55,26 @@ RefreshInactiveWindow(TargetWindowTitle, RefreshKeys)
   KeyWait("Shift")
   RefreshInactiveWindow("Git Gui", "{F5}")
 }
+
+; == Jira tickets in Slack ==
+
+^!+J::
+{
+  If !IsSet(JiraRoot)
+  {
+    return
+  }
+  KeyWait("Ctrl")
+  KeyWait("Alt")
+  KeyWait("Shift")
+  Send("^+{Left 3}")
+  A_Clipboard := ""
+  Send("^c")
+  if !ClipWait(1)
+  {
+    return
+  }
+  A_Clipboard := JiraRoot . A_Clipboard
+  Send("^v")
+  Send("{Right}")
+}
