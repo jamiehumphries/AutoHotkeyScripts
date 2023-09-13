@@ -2,6 +2,20 @@
 
 #Include "*i local.ahk"
 
+; === Update check ===
+
+Download("https://www.autohotkey.com/download/2.0/version.txt", "version.txt")
+Latest := FileRead("version.txt")
+
+if (A_AhkVersion != Latest)
+{
+  Result := MsgBox("AutoHotkey can be updated from v" A_AhkVersion " to v" Latest, "AutoHotkey update", "OKCancel")
+  if (Result = "OK")
+  {
+    Run("https://www.autohotkey.com/")
+  }
+}
+
 ; === Text ===
 
 :*?:,.::=>
