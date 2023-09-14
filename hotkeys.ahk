@@ -12,7 +12,9 @@ if (A_AhkVersion != Latest)
   Result := MsgBox("AutoHotkey can be updated from v" A_AhkVersion " to v" Latest, "AutoHotkey update", "OKCancel")
   if (Result = "OK")
   {
-    Run("https://www.autohotkey.com/")
+    FileDelete("AutoHotkey_*_setup.exe")
+    Download("https://www.autohotkey.com/download/ahk-v2.exe", "AutoHotkey_" Latest "_setup.exe")
+    Run("explorer " A_WorkingDir)
   }
 }
 
