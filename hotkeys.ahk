@@ -30,7 +30,7 @@ Run("update.ahk")
 
 ; === Windows ===
 
-RefreshInactiveWindow(TargetWindowTitle, RefreshKeys)
+ActivateWindowAndSendKeys(TargetWindowTitle, KeysToSend)
 {
   TargetWindowID := WinExist(TargetWindowTitle)
   if !TargetWindowID
@@ -40,23 +40,34 @@ RefreshInactiveWindow(TargetWindowTitle, RefreshKeys)
   ActiveWindowID := WinGetID("A")
   WinActivate(TargetWindowID)
   WinWaitActive(TargetWindowTitle)
-  Send(RefreshKeys)
+  Send(KeysToSend)
   WinActivate(ActiveWindowID)
 }
 
+; Refresh gitk
 ^+F5::
 {
   KeyWait("Ctrl")
   KeyWait("Shift")
-  RefreshInactiveWindow("gitk", "+{F5}")
+  ActivateWindowAndSendKeys("gitk", "+{F5}")
 }
 
+; Refresh Git Gui
 ^!+F5::
 {
   KeyWait("Ctrl")
   KeyWait("Alt")
   KeyWait("Shift")
-  RefreshInactiveWindow("Git Gui", "{F5}")
+  ActivateWindowAndSendKeys("Git Gui", "{F5}")
+}
+
+; Toggle mic mute on Teams
+^!+M::
+{
+  KeyWait("Ctrl")
+  KeyWait("Alt")
+  KeyWait("Shift")
+  ActivateWindowAndSendKeys("Microsoft Teams", "^+M")
 }
 
 ; == Jira tickets in Slack ==
