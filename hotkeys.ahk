@@ -41,6 +41,7 @@ ActivateWindowAndSendKeys(TargetWindowTitle, KeysToSend)
   WinActivate(TargetWindowID)
   WinWaitActive(TargetWindowTitle)
   Send(KeysToSend)
+  Sleep(100)
   WinActivate(ActiveWindowID)
 }
 
