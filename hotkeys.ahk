@@ -62,13 +62,21 @@ ActivateWindowAndSendKeys(TargetWindowTitle, KeysToSend)
   ActivateWindowAndSendKeys("Git Gui", "{F5}")
 }
 
-; Toggle mic mute on Teams
-^!+M::
+; Toggle mic mute
+RWin::
 {
-  KeyWait("Ctrl")
-  KeyWait("Alt")
-  KeyWait("Shift")
-  ActivateWindowAndSendKeys("Microsoft Teams", "^+M")
+  If WinExist("Huddle") ; Slack
+  {
+    Send("^+{Space}")
+  }
+  If WinExist("Microsoft Teams")
+  {
+    Send("#!k")
+  }
+  If WinExist("Zoom Meeting")
+  {
+    Send("!a")
+  }
 }
 
 ; == Jira tickets in Slack ==
