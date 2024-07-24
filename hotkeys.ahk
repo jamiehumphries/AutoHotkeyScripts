@@ -3,6 +3,12 @@
 #Include "*i local.ahk"
 Run("update.ahk")
 
+; === Modifiers ===
+; ^ = Ctrl
+; # = Win
+; ! = Alt
+; + = Shift
+
 ; === Text ===
 
 :*?:,.::=>
