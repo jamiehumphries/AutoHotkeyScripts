@@ -69,7 +69,7 @@ RWin::
   {
     Send("^+{Space}")
   }
-  If WinExist("Microsoft Teams")
+  If (WinExist("Microsoft Teams") Or WinExist("Webex"))
   {
     Send("#!k")
   }
