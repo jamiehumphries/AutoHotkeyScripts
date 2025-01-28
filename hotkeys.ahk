@@ -68,8 +68,14 @@ ActivateWindowAndSendKeys(TargetWindowTitle, KeysToSend) {
 ; Toggle mic mute
 RWin::
 {
+    if WinExist("Amazon Chime") {
+        ActivateWindowAndSendKeys("Amazon Chime", "^y")
+    }
     if WinExist("Huddle") { ; Slack
         Send("^+{Space}")
+    }
+    if WinExist("Meet – ") { ; Google Meet
+        ActivateWindowAndSendKeys("Meet – ", "^d")
     }
     if (WinExist("Microsoft Teams") Or WinExist("Webex")) {
         Send("#!k")
